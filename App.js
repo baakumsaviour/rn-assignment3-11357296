@@ -117,6 +117,36 @@ export default function App() {
     }
   ];
 
+  const styles = StyleSheet.create({
+  profile: {
+    marginLeft: 20,
+    marginRight: 20,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+  proText: {
+    color: '#000',
+    fontSize: 32,
+    lineHeight: 38.4,
+    fontWeight: '700',
+  },
+  circ: {
+    width: 50,
+    height: 50,
+    borderWidth: 2,
+    borderColor: '#fff',
+    borderStyle: 'solid',
+    borderRadius: 25,
+    backgroundColor: '#fff'
+  },
+  proImage: {
+    width: 46,
+    height: 45,
+  }
+});
+
+
   return (
     <View style={styles.container}>
       {
@@ -125,7 +155,9 @@ export default function App() {
           <View style={styles.circ}>
           <Image source={require('./assets/pro.png')} style={styles.proImage}/>
         </View>
-</View>
+    </View>
+
+
 
         
       }
