@@ -117,7 +117,38 @@ export default function App() {
     }
   ];
 
-  const styles = StyleSheet.create({
+
+
+
+  return (
+    <View style={styles.container}>
+      {
+        <View style={styles.profile}>
+          <Text style={styles.proText}>Hello, Devs</Text>
+          <View style={styles.circ}>
+          <Image source={require('./assets/pro.png')} style={styles.proImage}/>
+        </View>
+  <Text style={styles.notification}>14 tasks today</Text>
+
+    </View>
+
+
+
+
+        
+      }
+      <StatusBar style="auto" />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#F7F0E8',
+    paddingTop: 70
+  },
+
   profile: {
     marginLeft: 20,
     marginRight: 20,
@@ -143,33 +174,7 @@ export default function App() {
   proImage: {
     width: 46,
     height: 45,
-  }
-});
+  },
 
-
-  return (
-    <View style={styles.container}>
-      {
-        <View style={styles.profile}>
-          <Text style={styles.proText}>Hello, Devs</Text>
-          <View style={styles.circ}>
-          <Image source={require('./assets/pro.png')} style={styles.proImage}/>
-        </View>
-    </View>
-
-
-
-        
-      }
-      <StatusBar style="auto" />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F7F0E8',
-    paddingTop: 70
-  }
+  
 });
