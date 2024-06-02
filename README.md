@@ -36,7 +36,7 @@ Usage: The StatusBar component is used to control the app's status bar appearanc
 ### AntDesign
 Usage: I incorporated the AntDesign component from @expo/vector-icons to display a search icon, adding a touch of functionality and style to the search bar.
 
-#Asset Files
+# Asset Files
 
 Here are the images I used to enhance the visual appeal of TaskApp:
 profile: User profile picture.
