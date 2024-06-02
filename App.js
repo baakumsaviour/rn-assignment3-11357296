@@ -130,6 +130,13 @@ export default function App() {
         </View>
   
         <Text style={styles.notification}>14 tasks today</Text>
+        <View style={styles.search}>
+        <TextInput placeholder='Search' style={styles.searchbox} keyboardType='default' keyboardAppearance='dark'/>
+        <View style={styles.filter}>
+          <Image source={require('./assets/Vector.png')} style={{marginTop: 12, marginLeft: 10}}/>
+        </View>
+      </View>
+      <AntDesign name="search1" size={23} color="black" style={{marginTop: -35, marginLeft: 35, }}/>
 
     </View>
 
@@ -181,6 +188,24 @@ notification: {
     fontSize: 12,
     fontWeight: '500',
     marginTop: -10
-  }
+  },
+
+  searchbox: {
+    width: 280,
+    height: 48,
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderColor: '#fff',
+    borderRadius: 14,
+    paddingLeft: 50,
+    fontWeight: '700',
+    fontSize: 16,
+    color: 'black'
+  },
+  filter: {
+    width:
+
+      },
+  
   
 });
