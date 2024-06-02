@@ -128,7 +128,8 @@ export default function App() {
           <View style={styles.circ}>
           <Image source={require('./assets/pro.png')} style={styles.proImage}/>
         </View>
-  <Text style={styles.notification}>14 tasks today</Text>
+  
+        <Text style={styles.notification}>14 tasks today</Text>
 
     </View>
 
@@ -175,6 +176,11 @@ const styles = StyleSheet.create({
     width: 46,
     height: 45,
   },
-
+notification: {
+    marginLeft: 20,
+    fontSize: 12,
+    fontWeight: '500',
+    marginTop: -10
+  }
   
 });
