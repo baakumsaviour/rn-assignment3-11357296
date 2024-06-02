@@ -119,7 +119,16 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      {/* Add other components here */}
+      {
+        <View style={styles.profile}>
+          <Text style={styles.proText}>Hello, Devs</Text>
+          <View style={styles.circ}>
+          <Image source={require('./assets/pro.png')} style={styles.proImage}/>
+        </View>
+</View>
+
+        
+      }
       <StatusBar style="auto" />
     </View>
   );
