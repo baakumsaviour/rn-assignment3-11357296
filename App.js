@@ -117,34 +117,55 @@ export default function App() {
     }
   ];
 
-
-
-
   return (
     <View style={styles.container}>
-      {
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.profile}>
           <Text style={styles.proText}>Hello, Devs</Text>
           <View style={styles.circ}>
-          <Image source={require('./assets/pro.png')} style={styles.proImage}/>
+            <Image source={require('./assets/pro.png')} style={styles.proImage}/>
+          </View>
         </View>
-  
         <Text style={styles.notification}>14 tasks today</Text>
         <View style={styles.search}>
-        <TextInput placeholder='Search' style={styles.searchbox} keyboardType='default' keyboardAppearance='dark'/>
-        <View style={styles.filter}>
-          <Image source={require('./assets/Vector.png')} style={{marginTop: 12, marginLeft: 10}}/>
+          <TextInput placeholder='Search' style={styles.searchbox} keyboardType='default' keyboardAppearance='dark'/>
+          <View style={styles.filter}>
+            <Image source={require('./assets/Vector.png')} style={{marginTop: 12, marginLeft: 10}}/>
+          </View>
         </View>
-      </View>
-      <AntDesign name="search1" size={23} color="black" style={{marginTop: -35, marginLeft: 35, }}/>
-
-    </View>
-
-
-
-
-        
-      }
+        <AntDesign name="search1" size={23} color="black" style={{marginTop: -35, marginLeft: 35, }}/>
+        <Text style={styles.catego}>Categories</Text>
+        <View style={styles.mainCategory}>
+          <FlatList
+            data={category}
+            renderItem={({item}) => (
+              <View style={styles.listBox}>
+                <View>
+                  <Text style={styles.title}>{item.title}</Text>
+                  <Text style={styles.subTitle}>{item.subTitle}</Text>
+                </View>
+                <Image source={item.image} style={styles.catImage}/>
+              </View>
+            )}
+            horizontal
+            keyExtractor={(item) => item.id.toString()}
+            showsHorizontalScrollIndicator={false}
+          />
+        </View>
+        <Text style={styles.ongoing}>Ongoing Task</Text>
+        <View style={styles.last}>
+          <FlatList 
+            data={ongoing}
+            renderItem={({item}) => (
+              <View style={styles.lastR}>
+                <Text style={styles.taskT}>{item.title}</Text>
+              </View>
+            )}
+            keyExtractor={(item) => item.id.toString()}
+            showsVerticalScrollIndicator={false}
+          />
+        </View>
+      </ScrollView>
       <StatusBar style="auto" />
     </View>
   );
@@ -156,7 +177,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#F7F0E8',
     paddingTop: 70
   },
-
   profile: {
     marginLeft: 20,
     marginRight: 20,
@@ -183,13 +203,12 @@ const styles = StyleSheet.create({
     width: 46,
     height: 45,
   },
-notification: {
+  notification: {
     marginLeft: 20,
     fontSize: 12,
     fontWeight: '500',
     marginTop: -10
   },
-
   searchbox: {
     width: 280,
     height: 48,
@@ -203,9 +222,81 @@ notification: {
     color: 'black'
   },
   filter: {
-    width:
-
-      },
-  
-  
+    width: 50,
+    height: 48,
+    borderRadius: 14,
+    backgroundColor: '#F0522F'
+  },
+  search: {
+    display: 'flex',
+    flexDirection: 'row',
+    marginLeft: 20,
+    marginTop: 29,
+    marginRight: 20,
+    justifyContent: 'space-between',
+  },
+  catego: {
+    fontSize: 20,
+    fontWeight: '700',
+    lineHeight: 24,
+    marginLeft: 20,
+    marginTop: 50,
+  },
+  mainCategory: {
+    marginTop: 20
+  },
+  listBox: {
+    width: 186,
+    height: 192,
+    borderColor: '#FBF9F7',
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderRadius: 15,
+    marginHorizontal: 10,
+    backgroundColor: '#FBF9F7'
+  },
+  title: {
+    fontSize: 16,
+    fontWeight: '700',
+    paddingLeft: 26,
+    paddingTop: 10,
+  },
+  subTitle: {
+    fontSize: 12,
+    fontWeight: '400',
+    paddingLeft: 26,
+  },
+  catImage: {
+    width: 151,
+    height: 132,
+    marginLeft: 21,
+    marginTop: 7,
+    objectFit: 'contain'
+  },
+  ongoing: {
+    fontSize: 20,
+    fontWeight: '700',
+    marginLeft: 20,
+    marginTop: 25
+  },
+  last: {
+    marginBottom: 20,
+  },
+  lastR: {
+    width: 354,
+    height: 128,
+    marginLeft: 20,
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor: '#E8D1BA',
+    marginVertical: 10,
+    backgroundColor: '#fff',
+    borderRadius: 15,
+  },
+  taskT: {
+    fontSize: 16,
+    fontWeight: '700',
+    paddingLeft: 16,
+    paddingTop: 45
+  }
 });
