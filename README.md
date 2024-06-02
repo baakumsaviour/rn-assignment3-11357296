@@ -7,7 +7,7 @@ DCIT 202 ASSIGNMENT - SAVIOUR BAAKUM
 
 Welcome to TaskApp! This app is my personal project, designed to help you manage your tasks efficiently. Below, I'll walk you through each component I used and explain how they come together to make this app functional and user-friendly.
 
-##Components Overview
+## Components Overview
 
 ### App
 This is the main component of the application. It sets up the overall structure and layout of the app, including the header, search bar, categories, and ongoing tasks. I wanted to create a seamless experience, so everything is organized within this main component.
